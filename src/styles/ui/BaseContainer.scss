@@ -1,0 +1,10 @@
+@import 'styles/theme';
+
+.base-container {
+  margin-left: auto;
+  padding-left: 15px;
+  margin-right: auto;
+  padding-right: 15px;
+  max-width: $DESKTOP_WIDTH;
+  color: $textColor;
+}

@@ -1,0 +1,13 @@
+@import 'styles/theme';
+
+.header {
+  &.container {
+    @include center;
+  }
+
+  &.title {
+    font-weight: bold;
+    color: $background;
+    text-align: center;
+  }
+}

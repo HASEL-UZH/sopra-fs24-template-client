@@ -1,0 +1,27 @@
+@import 'styles/theme';
+
+.primary-button {
+  &:hover {
+    transform: translateY(-2px);
+  }
+  &:disabled {
+    cursor: default;
+    opacity: 0.4;
+    &:hover {
+      transform: none;
+    }
+  }
+  padding: 6px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 13px;
+  text-align: center;
+  height: 35px;
+  border: none;
+  border-radius: $borderRadius;
+  cursor: pointer;
+  opacity: 1;
+  color: $background;
+  background-color: $accent;
+  transition: all 0.3s ease;
+}
