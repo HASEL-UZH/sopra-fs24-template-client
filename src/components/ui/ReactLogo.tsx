@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "../../styles/ui/ReactLogo.scss";
 
 export const ReactLogo = props => {
@@ -11,4 +12,9 @@ export const ReactLogo = props => {
       </g>
     </svg>
   );
+};
+
+ReactLogo.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node,
 };
