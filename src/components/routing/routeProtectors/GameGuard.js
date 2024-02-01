@@ -1,4 +1,4 @@
-import {Redirect} from "react-router-dom";
+import {Navigate, Outlet} from "react-router-dom";
 import PropTypes from "prop-types";
 
 /**
@@ -10,11 +10,11 @@ import PropTypes from "prop-types";
  * @Guard
  * @param props
  */
-export const GameGuard = props => {
+export const GameGuard = () => {
   if (localStorage.getItem("token")) {
-    return props.children;
+    return <Outlet />;
   }
-  return <Redirect to="/login"/>;
+  return <Navigate to="/login" replace />;
 };
 
 GameGuard.propTypes = {

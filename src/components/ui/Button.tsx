@@ -1,4 +1,4 @@
-import "styles/ui/Button.scss";
+import "../../styles/ui/Button.scss";
 
 export const Button = props => (
   <button
