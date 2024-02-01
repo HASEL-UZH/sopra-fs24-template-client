@@ -2,10 +2,7 @@ import {Navigate, Route, Routes} from "react-router-dom";
 import Game from "../../views/Game";
 import PropTypes from "prop-types";
 
-const GameRouter = props => {
-  /**
-   * "this.props.base" is "/app" because as been passed as a prop in the parent of GameRouter, i.e., App.js
-   */
+const GameRouter = () => {
   return (
     <div style={{display: "flex", flexDirection: "column"}}>
       <Routes>

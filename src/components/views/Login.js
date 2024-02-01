@@ -88,7 +88,6 @@ const Login = props => {
 };
 
 /**
- * You can get access to the history object's properties via the withRouter.
- * withRouter will pass updated match, location, and history props to the wrapped component whenever it renders.
+ * You can get access to the history object's properties via the useLocation, useNavigate, useParams, ... hooks.
  */
 export default Login;
