@@ -1,0 +1,44 @@
+name: Dockerize
+
+on: 
+  push:
+    branches: 
+      - main
+  pull_request:
+    types: [ opened, synchronize, reopened ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # auto-generated
+      
+    steps:
+    # checkout repository code
+    - uses: actions/checkout@v4
+      
+    # docker QEMU preparation
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v3
+      
+    # docker Buildx preparation
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+      
+    # docker login
+    - name: Login to Docker Hub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.dockerhub_username }}
+        password: ${{ secrets.dockerhub_password }}
+        
+    # docker build and push
+    - name: Build and push (including latest tag)
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        file: ./Dockerfile
+        push: true
+        tags: ${{secrets.dockerhub_username}}/${{secrets.dockerhub_repo_name}}:${{github.sha}},${{secrets.dockerhub_username}}/${{secrets.dockerhub_repo_name}}:latest
+        cache-from: type=registry,ref=${{secrets.dockerhub_username}}/${{secrets.dockerhub_repo_name}}:cache
+        cache-to: type=inline,mode=max
