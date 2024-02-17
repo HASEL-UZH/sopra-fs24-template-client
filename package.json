@@ -1,15 +1,16 @@
 {
-  "name": "sopra-fs23-client-template",
-  "version": "0.1.0",
+  "name": "sopra-fs24-client-template",
+  "version": "0.24.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.24.0",
-    "node-gyp": "^8.4.1",
-    "node-sass": "^8.0.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-router-dom": "^5.3.4",
-    "react-scripts": "^5.0.0"
+    "axios": "^1.6.7",
+    "eslint-config-react-app": "^7.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.21.3",
+    "react-scripts": "^5.0.1",
+    "serve": "^14.2.1",
+    "typescript": "^5.3.3"
   },
   "scripts": {
     "dev": "react-scripts start",
@@ -21,6 +22,14 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "jest": {
+    "moduleNameMapper": {
+      "^axios$": "axios/dist/node/axios.cjs"
+    }
+  },
+  "engines": {
+    "node": "20.11.0"
+  },
   "browserslist": [
     ">0.2%",
     "not dead",
@@ -28,9 +37,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@babel/eslint-parser": "^7.23.10",
-    "eslint": "^8.56.0",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "sass": "^1.70.0"
   }
 }

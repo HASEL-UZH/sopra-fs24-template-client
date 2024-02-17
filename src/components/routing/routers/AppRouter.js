@@ -1,8 +1,9 @@
-import {BrowserRouter, Redirect, Route, Switch} from "react-router-dom";
-import {GameGuard} from "components/routing/routeProtectors/GameGuard";
-import GameRouter from "components/routing/routers/GameRouter";
-import {LoginGuard} from "components/routing/routeProtectors/LoginGuard";
-import Login from "components/views/Login";
+import React from "react";
+import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
+import {GameGuard} from "../routeProtectors/GameGuard";
+import GameRouter from "./GameRouter";
+import {LoginGuard} from "../routeProtectors/LoginGuard";
+import Login from "../../views/Login";
 
 /**
  * Main router of your application.
@@ -11,26 +12,26 @@ import Login from "components/views/Login";
  * The main difference between these two routes is the following:
  * /login renders another component without any sub-route
  * /game renders a Router that contains other sub-routes that render in turn other react components
- * Documentation about routing in React: https://reacttraining.com/react-router/web/guides/quick-start
+ * Documentation about routing in React: https://reactrouter.com/en/main/start/tutorial 
  */
 const AppRouter = () => {
   return (
     <BrowserRouter>
-      <Switch>
-        <Route path="/game">
-          <GameGuard>
-            <GameRouter base="/game"/>
-          </GameGuard>
+      <Routes>
+
+        <Route path="/game/*" element={<GameGuard />}>
+            <Route path="/game/*" element={<GameRouter base="/game"/>} />
         </Route>
-        <Route exact path="/login">
-          <LoginGuard>
-            <Login/>
-          </LoginGuard>
+
+        <Route path="/login" element={<LoginGuard />}>
+            <Route path="/login" element={<Login/>} />
         </Route>
-        <Route exact path="/">
-          <Redirect to="/game"/>
-        </Route>
-      </Switch>
+
+        <Route path="/" element={
+          <Navigate to="/game" replace />
+        }/>
+
+      </Routes>
     </BrowserRouter>
   );
 };

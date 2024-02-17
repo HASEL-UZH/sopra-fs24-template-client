@@ -22,7 +22,7 @@
         "no-unreachable": "error",
         "no-duplicate-imports": "error",
         "no-multiple-empty-lines": "warn",
-        "indent": ["warn", 4],
+        "indent": ["warn", 2],
         "quotes": ["warn", "double"],
         "newline-before-return": "warn",
         "padding-line-between-statements": [

@@ -1,4 +1,6 @@
-import "styles/ui/Button.scss";
+import React from "react";
+import PropTypes from "prop-types";
+import "../../styles/ui/Button.scss";
 
 export const Button = props => (
   <button
@@ -8,3 +10,11 @@ export const Button = props => (
     {props.children}
   </button>
 );
+
+
+Button.propTypes = {
+  width: PropTypes.number,
+  style: PropTypes.string,
+  className: PropTypes.string,
+  children: PropTypes.node,
+};
