@@ -9,8 +9,10 @@ import PropTypes from "prop-types";
  */
 export const LoginGuard = () => {
   if (!localStorage.getItem("token")) {
+    
     return <Outlet />;
   }
+  
   return <Navigate to="/game" replace />;
 };
 

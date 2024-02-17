@@ -20,11 +20,11 @@ const AppRouter = () => {
       <Routes>
 
         <Route path="/game/*" element={<GameGuard />}>
-            <Route path="/game/*" element={<GameRouter base="/game"/>} />
+          <Route path="/game/*" element={<GameRouter base="/game"/>} />
         </Route>
 
         <Route path="/login" element={<LoginGuard />}>
-            <Route path="/login" element={<Login/>} />
+          <Route path="/login" element={<Login/>} />
         </Route>
 
         <Route path="/" element={

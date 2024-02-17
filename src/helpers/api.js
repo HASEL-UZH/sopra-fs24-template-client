@@ -23,6 +23,7 @@ export const handleError = error => {
     }
 
     console.log("The request was made and answered but was unsuccessful.", error.response);
+    
     return info;
   } else {
     if (error.message.match(/Network Error/)) {
@@ -30,6 +31,7 @@ export const handleError = error => {
     }
 
     console.log("Something else happened.", error);
+    
     return error.message;
   }
 };
