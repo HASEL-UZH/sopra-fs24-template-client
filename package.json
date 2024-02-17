@@ -10,12 +10,13 @@
     "react-router-dom": "^6.21.3",
     "react-scripts": "^5.0.1",
     "serve": "^14.2.1",
-    "typescript": "^5.3.3"
+    "typescript": "^3.2.1"
   },
   "scripts": {
     "dev": "react-scripts start",
     "start": "serve -s build",
     "build": "react-scripts build",
+    "gcp-build": "",
     "eject": "react-scripts eject",
     "test": "react-scripts test --env=jsdom"
   },
