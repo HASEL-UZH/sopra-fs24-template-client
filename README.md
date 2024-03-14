@@ -66,7 +66,7 @@ Everything in this repository is already set up to minimize your effort for depl
 All changes to the main branch will automatically be pushed to dockerhub and optimized for production.
 
 ### Setup
-1. **One** member of the team should create an account on [dockerhub](https://hub.docker.com/), _incorporating the group number into the account name_, for example, `SoPra_group_XX`.\
+1. **One** member of the team should create an account on [dockerhub](https://hub.docker.com/), _incorporating the group number into the account name_, for example, `SoPraGroupXX`.\
 2. This account then creates a repository on dockerhub with the _same name as the group's Github repository name_.\
 3. Finally, the person's account details need to be added as [secrets](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository) to the group's repository:
     - dockerhub_username (the username of the dockerhub account from step 1, for example, `SoPra_group_XX`)
